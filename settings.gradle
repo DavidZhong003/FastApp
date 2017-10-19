@@ -1,0 +1,1 @@
+include ':app', ':byfastapp-common', ':byfastapp-common-baserecyclerviewadapter', ':byfastapp-common-logger', ':byfastapp-common-net'

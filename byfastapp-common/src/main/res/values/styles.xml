@@ -1,0 +1,23 @@
+<resources>
+
+    <!--todo  颜色配置  Base application theme. -->
+    <style name="CommonQMui" parent="QMUI.Compat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!--标题栏颜色-->
+        <item name="colorPrimary">@color/commonColorPrimary</item>
+        <!--标题栏背景色-->
+        <item name="colorPrimaryDark">@color/commonColorPrimaryDark</item>
+        <!--控制各个控件被选中时的颜色-->
+        <item name="colorAccent">@color/commonColorAccent</item>
+        <!--页面背景色-->
+        <item name="android:windowBackground">@color/commonWindowBacks</item>
+        <!--ToolBar上的Title颜色-->
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+
+        <item name="qmui_topbar_height">@dimen/qmui_topbar_height</item>
+
+        <item name="qmui_topbar_title_color">@color/qmui_config_color_white</item>
+
+    </style>
+
+</resources>

@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="CommonQMui">
+        <!-- Customize your theme here. -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--标题栏颜色-->
+        <item name="colorPrimary">@color/commonColorPrimary</item>
+        <item name="colorPrimaryDark">@color/commonColorPrimaryDark</item>
+        <item name="android:statusBarColor">@color/commonColorPrimary</item>
+    </style>
+
+</resources>

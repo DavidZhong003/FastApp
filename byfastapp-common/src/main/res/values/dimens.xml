@@ -1,0 +1,9 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!--头部标题栏高度-->
+    <dimen name="qmui_topbar_height">48dp</dimen>
+    <!--底部导航栏的高度-->
+    <dimen name="home_tab_height">49dp</dimen>
+</resources>

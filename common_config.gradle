@@ -1,0 +1,49 @@
+project.ext {
+    //java 语言相关
+    javaVersion = 8
+    javaMaxHeapSize = '4G'
+    //Android 编译版本相关
+    buildToolsVersion = "25.0.2"
+    //方便编译,正式换成14
+    minSdkVersion = 21
+    targetSdkVersion = 25
+    compileSdkVersion = 25
+    supportVersion = "25.3.1"
+
+    //混淆相关
+    minifyEnable = true
+    shrinkResEnable = minifyEnable
+
+    //JDK版本兼容
+    sourceCompatibility = this.&getJavaVersion()
+    targetCompatibility = this.&getJavaVersion()
+
+    //版本
+    versionCode = 1
+    versionName = "1.0"
+
+    enabledJackOptions = true
+    encoding = 'UTF-8'
+}
+
+def getJavaVersion(){
+    switch (project.ext.javaVersion){
+        case "6" :
+            return JavaVersion.VERSION_1_6
+        case "7" :
+            return JavaVersion.VERSION_1_7
+        case "8" :
+            return JavaVersion.VERSION_1_8
+        default:
+            return JavaVersion.VERSION_1_8
+    }
+}
+
+ext.deps = [
+        // Test dependencies
+        junit      : 'junit:junit:4.12',
+        truth      : 'com.google.truth:truth:0.28',
+        robolectric: 'org.robolectric:robolectric:3.3',
+        mockito    : "org.mockito:mockito-core:1.10.19",
+        json       : "org.json:json:20160810"
+]

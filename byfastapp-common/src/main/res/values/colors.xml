@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="commonWindowBacks">#ffffff</color>
+    <color name="commonColorPrimary">#6e6e6e</color>
+    <color name="commonColorPrimaryDark">#7e7e7e</color>
+    <color name="commonColorAccent">#FF4081</color>
+    <color name="textColorPrimary">#ffffff</color>
+</resources>

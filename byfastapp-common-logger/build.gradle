@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+apply from: "${project.rootDir}/common_config.gradle"
+android {
+  compileSdkVersion project.ext.compileSdkVersion
+  buildToolsVersion project.ext.buildToolsVersion
+
+  defaultConfig {
+    minSdkVersion project.ext.minSdkVersion
+  }
+
+  lintOptions {
+    textReport true
+    textOutput 'stdout'
+  }
+
+  testOptions {
+    unitTests.returnDefaultValues = true
+  }
+}
+
+dependencies {
+  testCompile project.ext.deps.junit
+  testCompile project.ext.deps.truth
+  testCompile project.ext.deps.robolectric
+  testCompile project.ext.deps.mockito
+  testCompile project.ext.deps.json
+}
