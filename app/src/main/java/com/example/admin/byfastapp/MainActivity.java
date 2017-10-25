@@ -1,5 +1,6 @@
 package com.example.admin.byfastapp;
 
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 import com.example.byfastapp.ui.BaseTitleBarActivity;
 import com.example.byfastapp.weight.status.IStatusView;
 import com.example.byfastapp.weight.status.StatusChangeListener;
+import com.example.byfastapp.weight.status.StatusControllerFrameLayoutImp;
 import com.example.byfastapp.weight.status.StatusView;
 
 import butterknife.BindView;
@@ -26,7 +28,9 @@ public class MainActivity
     protected void initContentView(View contentView) {
         setViewOnClickListener(mTvContent,v -> showLoadingFragment());
         mStatusView = new StatusView.Builder(mActivityMain)
-                                .setStatusView(R.layout.status_error,"loading")
+                                .setController(new StatusControllerFrameLayoutImp())
+                                .setStatusView(R.layout.status_loading,"loading")
+                                .setStatusView(R.layout.status_error,"error")
                                 .setOnStatusChangeListener(new StatusChangeListener() {
 
                                     @Override
@@ -41,7 +45,12 @@ public class MainActivity
                                     public void onStatusViewShowing(String status,
                                                                     View statusView)
                                     {
-                                        Log.e(TAG, "onStatusViewShowing: "+status+"////"+statusView);
+                                        showShortToast(status);
+                                        if (TextUtils.equals(status,"loading")){
+                                            statusView.setOnClickListener(v -> mStatusView.showStatusView("error"));
+                                        }else if (TextUtils.equals("error",status)){
+                                            statusView.setOnClickListener(v -> mStatusView.showTargetView());
+                                        }
                                     }
 
                                     @Override
