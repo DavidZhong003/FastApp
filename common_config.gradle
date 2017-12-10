@@ -24,15 +24,44 @@ project.ext {
 
     enabledJackOptions = true
     encoding = 'UTF-8'
+
+    def butterknifeVersion = "8.4.0"
+
+
+    dependencies = [
+            "test"               : "junit:junit:4.12",
+            "appcompat-v7"       : "com.android.support:appcompat-v7:$supportVersion",
+            "support-v4"         : "com.android.support:support-v4:$supportVersion",
+            "support_design"     : "com.android.support:design:$supportVersion",
+            "recyclerview"       : "com.android.support:recyclerview-v7:$supportVersion",
+            "cardview"           : "com.android.support:cardview-v7:$supportVersion",
+            "butterknife"        : "com.jakewharton:butterknife:8.4.0",
+            "butterknife_apt"    : "com.jakewharton:butterknife-compiler:8.4.0",
+            "retrolambdaConfig"  : "net.orfjackal.retrolambda:retrolambda:2.3.0",
+            "qmui"               : "com.qmuiteam:qmui:1.0.2",
+            "glide"              : "com.github.bumptech.glide:glide:4.0.0",
+            "glideProcessor"     : "com.github.bumptech.glide:compiler:4.0.0",
+            "glideokintegration" : "com.github.bumptech.glide:okhttp3-integration:4.0.0",
+            "dagger2"            : "com.google.dagger:dagger:2.4",
+            "dagger2_apt"        : "com.google.dagger:dagger-compiler:2.4",
+            "rxjava"             : "io.reactivex.rxjava2:rxjava:2.0.6",
+            "okhttp3"            : "com.squareup.okhttp3:okhttp:3.6.0",
+            "retrofit"           : "com.squareup.retrofit2:retrofit:2.2.0",
+            "retrofit_gson"      : "com.squareup.retrofit2:converter-gson:2.2.0",
+            "retrofit_rxjava"    : "com.squareup.retrofit2:adapter-rxjava2:2.2.0",
+            "gson"               : "com.google.code.gson:gson:2.8.0",
+            "support-annotations": "com.android.support:support-annotations:25.3.1",
+    ]
+
 }
 
-def getJavaVersion(){
-    switch (project.ext.javaVersion){
-        case "6" :
+def getJavaVersion() {
+    switch (project.ext.javaVersion) {
+        case "6":
             return JavaVersion.VERSION_1_6
-        case "7" :
+        case "7":
             return JavaVersion.VERSION_1_7
-        case "8" :
+        case "8":
             return JavaVersion.VERSION_1_8
         default:
             return JavaVersion.VERSION_1_8

@@ -53,9 +53,14 @@ public abstract class BaseActivity
     protected void setExitAnim(int exitAnim) {
         mExitAnim = exitAnim;
     }
-
-    protected int mEnterAnim = R.anim.slide_in_right; //进入下个界面的效果
-    protected int mExitAnim  = R.anim.slide_out_left; //当前退出的动画效果
+    /**
+     * 进入下个界面的效果
+     */
+    protected int mEnterAnim = R.anim.slide_in_right;
+    /**
+    当前退出的动画效果
+     */
+    protected int mExitAnim  = R.anim.slide_out_left;
 
     private View mRootView;
 

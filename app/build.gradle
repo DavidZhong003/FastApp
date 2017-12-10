@@ -41,12 +41,14 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile "com.android.support:appcompat-v7:$project.ext.supportVersion"
+//    compile "com.android.support:appcompat-v7:$project.ext.supportVersion"
+    compile project.ext.dependencies["appcompat-v7"]
+    compile project.ext.dependencies["support-v4"]
     compile project(':byfastapp-common')
     // butterknife
     compile group: 'org.jacoco', name: 'org.jacoco.agent', version: '0.7.5.201505241946'
-    compile 'com.jakewharton:butterknife:8.4.0'
-    compile "com.android.support:support-v4:$project.ext.supportVersion"
-    apt 'com.jakewharton:butterknife-compiler:8.4.0'
-    retrolambdaConfig 'net.orfjackal.retrolambda:retrolambda:2.3.0'
+    compile project.ext.dependencies["butterknife"]
+//    compile "com.android.support:support-v4:$project.ext.supportVersion"
+    apt project.ext.dependencies["butterknife_apt"]
+    retrolambdaConfig project.ext.dependencies["retrolambdaConfig"]
 }
